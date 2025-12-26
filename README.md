@@ -33,12 +33,13 @@ The app allows users to search for any city and view real-time weather details a
 
 ##  Project Tree
 
-weather-app/
+```
+  weather-app/
 ├── index.html        # Main HTML file
 ├── style.css         # Styles for the application
 ├── script.js         # JavaScript logic & API handling
 └── README.md         # Project documentation
-
+```
 
 ##  API Setup
 
