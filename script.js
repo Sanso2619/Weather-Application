@@ -19,12 +19,12 @@ const Pvalue = document.getElementById("Pvalue");
 
 const forecast = document.querySelector(".forecast");
 
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "6710eaf036d54a0aa4e144215252612";
 
 function finduserlocation() {
   const location = userlocation.value.trim();
     forecast.innerHTML="";
-  console.log("City entered:", location); // 🔍 debug
+  console.log("City entered:", location); 
 
   if (location === "") {
     alert("Please enter a city name");
