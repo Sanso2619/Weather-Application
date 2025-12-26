@@ -13,7 +13,7 @@ body{
     align-items: center;
 }
 .weather-input{
-    width:40%;
+    width:25%;
     position: fixed;
     inset:0;
     background-color: hsl(192, 92%, 75%);
@@ -51,10 +51,10 @@ body{
     font-size: 22px;
 }
 .weather-output{
-    width:60%;
+    width:75%;
     position: fixed;
     inset:0;
-    margin-left:40%;
+    margin-left:25%;
     padding:2rem;
     background-color: hsla(0, 6%, 90%, 0.715);
     overflow: auto;
@@ -83,4 +83,16 @@ body{
     align-items: center;
     display: flex;
     gap:10px;
+}
+.weatherIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.weatherIcon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
