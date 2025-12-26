@@ -19,14 +19,14 @@ const Pvalue = document.getElementById("Pvalue");
 
 const forecast = document.querySelector(".forecast");
 
-const API_KEY = "6710eaf036d54a0aa4e144215252612";
+const API_KEY = "YOUR_API_KEY";
 
 function finduserlocation() {
   const location = userlocation.value.trim();
-
+    forecast.innerHTML="";
   console.log("City entered:", location); // 🔍 debug
 
-  if (city === "") {
+  if (location === "") {
     alert("Please enter a city name");
     return;
   }
@@ -42,15 +42,15 @@ function finduserlocation() {
     city.innerHTML=data.location.name + "," + data.location.country
     weatherIcon.innerHTML = `<img src="https:${data.current.condition.icon}" alt="weather icon">`;
     if (converter.value === "C") {
-        temperature.innerHTML = `${data.current.temp_c}°C`;
+        temperature.innerHTML = `${data.current.temp_c}` + `<span class="temp-unit">°C</span>`;
         feelslike.innerHTML="Feels like " + `${data.current.feelslike_c}°C`;
         description.innerHTML=`<i class="fa-brands fa-cloudversify"></i> &nbsp;`+ data.current.condition.text;
     } else {
-        temperature.innerHTML = `${data.current.temp_f}°F`;
+        temperature.innerHTML = `${data.current.temp_f}` + `<span class="temp-unit">°F</span>`;;
         feelslike.innerHTML="Feels like " + `${data.current.feelslike_f}°F`;
         description.innerHTML=`<i class="fa-brands fa-cloudversify"></i> &nbsp;`+ data.current.condition.text;
     }
-    
+
     const rawDateTime = data.location.localtime; 
 
     const formattedDateTime = new Date(rawDateTime).toLocaleString(undefined, {
@@ -60,8 +60,7 @@ function finduserlocation() {
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit"
-    });
-
+    });    
     date.innerHTML = formattedDateTime;
 
     Hvalue.innerHTML=Math.round(data.current.humidity)+ "<span>%<span></span>";
@@ -71,6 +70,24 @@ function finduserlocation() {
     Cvalue.innerHTML=data.current.cloud + "<span>%<span></span>";
     UVvalue.innerHTML=data.current.uv;
     Pvalue.innerHTML=data.current.pressure_mb + "<span>hPa<span></span>";
+
+    data.forecast.forecastday.forEach((weather)=>{
+        const formattedDate = new Date(weather.date).toLocaleDateString(undefined, {
+            weekday: "long",
+            day: "numeric",
+            month: "short",
+            });
+        const tempmax=converter.value === "C"?`${weather.day.maxtemp_c}°`:`${weather.day.maxtemp_f}°`;
+        const tempmin=converter.value === "C"?`${weather.day.mintemp_c}°`:`${weather.day.mintemp_f}°`;
+
+        let div=document.createElement("div");
+        div.innerHTML = `
+            <p class="forecast-date">${formattedDate}</p>
+            <img src="https:${weather.day.condition.icon}" alt="weather icon">
+            <p class="forecast-condition">${weather.day.condition.text}</p>
+            <p class="forecast-temp">${tempmax} / ${tempmin}</p>`;
+        forecast.append(div);
+    })
 
 })
     

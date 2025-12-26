@@ -9,14 +9,14 @@ body{
     height:100vh;
 }
 .container{
-    display:flux;
+    display:flex;
     align-items: center;
 }
 .weather-input{
     width:25%;
     position: fixed;
     inset:0;
-    background-color: hsl(192, 92%, 75%);
+    background-color:rgba(126, 189, 220, 0.943);
     padding:1rem 2.5rem;
 }
 .input-group{
@@ -55,7 +55,7 @@ body{
     position: fixed;
     inset:0;
     margin-left:25%;
-    padding:2rem;
+    padding:2rem 2rem;
     background-color: hsla(0, 6%, 90%, 0.715);
     overflow: auto;
 }
@@ -66,7 +66,15 @@ body{
     row-gap:1rem;
     column-gap: 10px;;
 }
-.highlight div{
+.forecast{
+    display: grid;
+    grid-template-columns: repeat(4,260px);
+    grid-auto-flow: row;
+    row-gap: 1rem;
+    column-gap: 10px;
+}
+.highlight div,
+.forecast div{
     height:200px;
     display: grid;
     align-items: center;
@@ -92,7 +100,37 @@ body{
 }
 
 .weatherIcon img {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
+}
+.weather-input .feelslike,
+.weather-input .description,
+.weather-input .date,
+.weather-input .city{
+    padding: 10px 0;
+}
+
+.temperature{
+    font-size: 5rem;
+    text-align: center;
+    display: flex;
+    font-weight: 500;
+}
+.temp-unit {
+  font-size: 0.5em;   
+  margin-top: 20px;
+}
+.forecast-condition{
+    color: grey;
+    font-size: 1em;
+    text-align: center;
+    padding-bottom: 2px;
+    font-style: italic;
+}
+.description i{
+    font-size: 25px;
+}
+.heading{
+    margin: 1rem 0;
 }
