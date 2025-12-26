@@ -4,6 +4,10 @@ A responsive and user-friendly **Weather Application** built using **HTML, CSS, 
 The app allows users to search for any city and view real-time weather details along with a 7-day forecast.
 
 ---
+## Live Demo
+
+ https://sanchita-weather-app.netlify.app/
+
 
 ## Features
 
@@ -51,5 +55,5 @@ This project uses **WeatherAPI**.
 
 ```js
 const API_KEY = "YOUR_API_KEY";
-
+```
 
