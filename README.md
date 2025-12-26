@@ -1,11 +1,11 @@
-#  Weather App
+#  🌤️Weather App
 
 A responsive and user-friendly **Weather Application** built using **HTML, CSS, and JavaScript**, powered by the **WeatherAPI**.  
 The app allows users to search for any city and view real-time weather details along with a 7-day forecast.
 
 ---
 
-##  Features
+## Features
 
 - 🔍 Search weather by city name
 - 🌡️ Display current temperature and “feels like” temperature
@@ -31,14 +31,14 @@ The app allows users to search for any city and view real-time weather details a
 
 ---
 
-##  Project Structure
+##  Project Tree
 
 weather-app/
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+├── index.html        # Main HTML file
+├── style.css         # Styles for the application
+├── script.js         # JavaScript logic & API handling
+└── README.md         # Project documentation
+
 
 ##  API Setup
 
