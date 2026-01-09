@@ -19,7 +19,7 @@ const Pvalue = document.getElementById("Pvalue");
 
 const forecast = document.querySelector(".forecast");
 
-const API_KEY = "6710eaf036d54a0aa4e144215252612";
+const API_KEY = "ac04a0d91f794e81ada63345260901";
 
 function finduserlocation() {
   const location = userlocation.value.trim();
